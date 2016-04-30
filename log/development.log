@@ -349,3 +349,363 @@ WHERE fk.referenced_column_name is not null
   AND fk.table_name = 'users'
 [0m
   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430170755)
+  [1m[35m (11.0ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160430170755')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (0.6ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `created_by_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_created_by_id`  (`created_by_id`) ) ENGINE=InnoDB
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE `users`
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160430161045'[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255), `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160430161045')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (10.6ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `created_by_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_created_by_id`  (`created_by_id`) ) ENGINE=InnoDB
+  [1m[36m (8.7ms)[0m  [1mALTER TABLE `events` ADD CONSTRAINT `fk_rails_1f2fddcdaa`
+FOREIGN KEY (`created_by_id`)
+  REFERENCES `created_bies` (`id`)
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (13.3ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `created_by_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_created_by_id`  (`created_by_id`) ) ENGINE=InnoDB
+  [1m[36m (9.8ms)[0m  [1mALTER TABLE `events` ADD CONSTRAINT `fk_rails_1f2fddcdaa`
+FOREIGN KEY (`created_by_id`)
+  REFERENCES `created_bies` (`id`)
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (0.5ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `user_id_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_user_id_id`  (`user_id_id`) ) ENGINE=InnoDB
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (12.6ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `user_id_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_user_id_id`  (`user_id_id`) ) ENGINE=InnoDB
+  [1m[36m (8.8ms)[0m  [1mALTER TABLE `events` ADD CONSTRAINT `fk_rails_90a41b0657`
+FOREIGN KEY (`user_id_id`)
+  REFERENCES `user_ids` (`id`)
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430171351)
+  [1m[35m (9.5ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `begin_date` date, `end_date` date, `User_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_User_id`  (`User_id`) ) ENGINE=InnoDB
+  [1m[36m (10.9ms)[0m  [1mALTER TABLE `events` ADD CONSTRAINT `fk_rails_9fa376dd2b`
+FOREIGN KEY (`User_id`)
+  REFERENCES `Users` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430171351')[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `tests`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (1.3ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.9ms)[0m  DROP TABLE `events`
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160430171351'[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430172923)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430172923)
+  [1m[35m (7.9ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `start_date` date, `end_date` date, `created_by` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160430172923')
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'events'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'tests'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'weekend_planner_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430175433)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430175433)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430175433)
+  [1m[35m (15.1ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `start_date` date, `end_date` date, `creator_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_events_on_creator_id`  (`creator_id`) ) ENGINE=InnoDB
+  [1m[36m (10.8ms)[0m  [1mALTER TABLE `events` ADD CONSTRAINT `fk_rails_15c34a9137`
+FOREIGN KEY (`creator_id`)
+  REFERENCES `creators` (`id`)
+[0m
+  [1m[36m (1.5ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430180909)
+  [1m[35m (0.7ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `description` text , `start_date` date , `end_date` date , `created_by` int(11) , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `tests`[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `tests`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430180909)
+  [1m[35m (0.5ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `description` text , `start_date` date , `end_date` date , `created_by` int(11) , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430180909)
+  [1m[35m (11.9ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `description` text , `start_date` date , `end_date` date , `created_by` int(11) , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430180909')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.8ms)[0m  DROP TABLE `events`
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20160430180909'[0m
+  [1m[35m (0.4ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `tests`[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateEvents (20160430180909)
+  [1m[35m (8.5ms)[0m  CREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `description` text , `start_date` date , `end_date` date , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430180909')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddCreatedByToEvents (20160430181735)
+  [1m[36m (11.6ms)[0m  [1mALTER TABLE `events` ADD `created_by` int(11) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430181735')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.9ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
