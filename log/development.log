@@ -749,3 +749,45 @@ Migrating to AddCreatedByToEvents (20160430181735)
   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `tests`
   [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
   [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (8.9ms)[0m  [1mDROP DATABASE IF EXISTS `weekend_planner_development`[0m
+  [1m[36m (0.9ms)[0m  [1mCREATE DATABASE `weekend_planner_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[36m (0.4ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (18.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (15.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.4ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateTests (20160430143053)
+  [1m[35m (13.3ms)[0m  CREATE TABLE `tests` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430143053')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateUsers (20160430161045)
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) , `password_digest` varchar(255) , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430161045')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateEvents (20160430180909)
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE `events` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255) , `description` text , `start_date` date , `end_date` date , `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430180909')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddCreatedByToEvents (20160430181735)
+  [1m[36m (17.5ms)[0m  [1mALTER TABLE `events` ADD `created_by` int(11) [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20160430181735')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mSELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()[0m
+  [1m[35m (3.9ms)[0m  SHOW CREATE TABLE `events`
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.3ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.3ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `events`[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `tests`
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  SELECT table_name FROM information_schema.views WHERE table_schema = SCHEMA()
