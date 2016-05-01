@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<%=
+if @is_this_user_attending.empty?
+    link_to "Attend", controller: "events", action: "attend" , id: @this_event_id
+  else
+    link_to "Unattend", controller: "events", action: "unattend", id: @this_event_id
+  end %>
+<h1><%= @event.name %></h1>
+<p>Description: <%=@event.description %></p>
+<p>Start Date: <%=@event.start_date %></p>
+<p>End Date: <%=@event.end_date %></p>
+<h1>Attending</h1>
+<% @attendees.each do |attendee| %>
+  <ul>
+
+    <li><%= link_to attendee.first_name.to_s + ' ' + attendee.last_name[0].to_s + '.', user_path(attendee) %></td>
+
+  </ul>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
