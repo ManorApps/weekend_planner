@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'session/dashboard'
+
+  get 'session/create'
+
+  get 'session/destroy'
+
   resources :users
   resources :events
   match ':controller(/:action(/:id))', :via => :get
