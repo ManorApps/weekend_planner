@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
+  before_action :logged_in?
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => session[:user_id]).distinct
-
-
+    # @events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => session[:user_id]).distinct
+    @events = User.find(session[:user_id]).events
   end
 
   # GET /events/1

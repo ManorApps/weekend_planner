@@ -22,7 +22,9 @@
         <td><%= event.description %></td>
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
-        <td><%= event.first_name.to_s + ' ' + event.last_name[0].to_s + '.'%></td>
+        <!-- put erb tags back if we want to keep line 26 -->
+        <!-- <td>event.first_name.to_s + ' ' + event.last_name[0].to_s + '.'</td> -->
+        <td><%= event.user.first_name + ' ' + event.user.last_name[0] + '.'%></td>
         <td><%= event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
