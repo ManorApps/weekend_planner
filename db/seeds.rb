@@ -16,5 +16,7 @@ end
 end
 
 1000.times do
-  Attending.create(event_id: rand(1..100), user_id: rand(1..10))
+  random_user = User.order("RAND()").first.id
+  random_event = Event.order("RAND()").first.id
+  Attending.create(event_id: random_event, user_id: random_user)
 end
