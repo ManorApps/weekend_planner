@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => 1).distinct
+    @events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => session[:user_id]).distinct
 
 
   end
@@ -24,12 +24,12 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    @user_id = 1
+    @user_id = session[:user_id]
   end
 
   # GET /events/1/edit
   def edit
-    @user_id = 1
+    @user_id = session[:user_id]
   end
 
   # POST /events
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
         format.json { render :show, status: :created, location: @event }
         @attending = Attending.new
         @attending.event_id = @event.id
-        @attending.user_id = 1
+        @attending.user_id = session[:user_id]
         @attending.save
       else
         format.html { render :new }
@@ -79,14 +79,14 @@ class EventsController < ApplicationController
   def attend
     @attending = Attending.new
     @attending.event_id = params[:id]
-    @attending.user_id = 1
+    @attending.user_id = session[:user_id]
     @attending.save
     redirect_to :action => "show", :id => params[:id]
 
   end
 
   def unattend
-    @unattending = Attending.find_by(user_id: 1, event_id: params[:id]).destroy
+    @unattending = Attending.find_by(user_id: session[:user_id], event_id: params[:id]).destroy
     redirect_to :action => "show", :id => params[:id]
   end
 
