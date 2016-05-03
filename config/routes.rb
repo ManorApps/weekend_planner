@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sessions/dashboard'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'session/dashboard'
 
   get 'session/create'
