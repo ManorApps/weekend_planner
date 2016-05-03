@@ -2,17 +2,9 @@ Rails.application.routes.draw do
 
   root 'sessions#dashboard'
 
-  get 'sessions/dashboard'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'session/dashboard'
-
-  get 'session/create'
-
-  get 'session/destroy'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get 'logout' => 'sessions#destroy'
 
   resources :users
   resources :events

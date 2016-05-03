@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
     else
-      flash.now[:alert] = "Login failed: invalid email or password"
+      redirect_to root_path, alert: "Login failed: invalid email or password"
     end
   end
 
