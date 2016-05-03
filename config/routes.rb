@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'sessions#dashboard'
+
   get 'sessions/dashboard'
 
   get 'sessions/create'
