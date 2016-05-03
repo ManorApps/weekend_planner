@@ -6267,3 +6267,144 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
   Rendered users/index.html.erb within layouts/application (1.4ms)
 Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-03 16:59:46 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-03 16:59:47 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rpHgv6FqtFyKOCZa3Tk+EVLt/OnRpzDyfwHvsneloqm6RZkV31hO65kuotyAZVul0ktFdivWCUlsciJYHvRkRw==", "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2016-05-03 16:59:49 -0400
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 70ms (Views: 68.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-03 16:59:52 -0400
+Processing by SessionsController#dashboard as HTML
+  Rendered sessions/dashboard.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 31ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/application.self-7cd8ed4c7345c96fe410928fc4aed8f3bf0f963a445dabdf342f647b26aad262.css?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/scaffolds.self-9101aeda8798abc2302a6a7c0add8fef1626a568c7c1d5c07077b6ded299f9d2.css?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/application.self-85e2d31c04056028944f674e34fe2355d48b8c2b4ae5f9f032f8e4d7837d39d7.js?body=1" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/assets/road-sky-clouds-cloudy-588484bc609df42dcde1ebf058ce92381e5b9942ee852a1dd43dd0604c5f06b2.jpg" for ::1 at 2016-05-03 16:59:53 -0400
+
+
+Started GET "/" for ::1 at 2016-05-03 17:02:11 -0400
+Processing by SessionsController#dashboard as HTML
+  Rendered sessions/dashboard.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/Jefferson/weekend_planner/app/views/sessions/dashboard.html.erb:13: syntax error, unexpected ')', expecting =>
+... method: "get", new_user_path );@output_buffer.safe_append='
+...                               ^
+/Users/Jefferson/weekend_planner/app/views/sessions/dashboard.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/Jefferson/weekend_planner/app/views/sessions/dashboard.html.erb:32: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/sessions/dashboard.html.erb:13: syntax error, unexpected ')', expecting =>
+  app/views/sessions/dashboard.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/sessions/dashboard.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.2ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.4ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Jefferson/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (117.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-03 17:03:05 -0400
+Processing by SessionsController#dashboard as HTML
+  Rendered sessions/dashboard.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 30ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/application.self-7cd8ed4c7345c96fe410928fc4aed8f3bf0f963a445dabdf342f647b26aad262.css?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/scaffolds.self-9101aeda8798abc2302a6a7c0add8fef1626a568c7c1d5c07077b6ded299f9d2.css?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/application.self-85e2d31c04056028944f674e34fe2355d48b8c2b4ae5f9f032f8e4d7837d39d7.js?body=1" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/assets/road-sky-clouds-cloudy-588484bc609df42dcde1ebf058ce92381e5b9942ee852a1dd43dd0604c5f06b2.jpg" for ::1 at 2016-05-03 17:03:06 -0400
+
+
+Started GET "/users/new" for ::1 at 2016-05-03 17:03:07 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-03 17:03:10 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-03 17:03:17 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
