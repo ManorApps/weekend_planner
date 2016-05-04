@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    # @events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => session[:user_id]).distinct
+    #@events = Event.joins(:attending, :user).select('users.first_name', 'users.last_name', 'events.name', 'events.description','events.start_date','events.end_date','events.created_at', 'events.id').where('attendings.user_id' => session[:user_id]).distinct
     @events = User.find(session[:user_id]).events
   end
 
@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @this_event_id = params[:id]
-    @this_user_id = 1
+    @this_user_id = session[:user_id]
     @is_this_user_attending = Attending.select('attendings.id').where('attendings.user_id' => @this_user_id, 'attendings.event_id' => @this_event_id)
-    @attendees = Attending.joins(:user).select('users.id', 'users.first_name', 'users.last_name', 'users.email').where('attendings.event_id' => params[:id])
+    @attendees = Attending.joins(:user).select('users.id', 'users.first_name', 'users.last_name', 'users.email').where('attendings.event_id' => @this_event_id)
 
 
   end
@@ -69,6 +69,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
