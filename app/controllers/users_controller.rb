@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    redirect_to root_path, notice: "You do not have permission to access that page" if @user.id != session[:user_id]
   end
 
   # POST /users
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
       else
         render :new
-         
+
       end
 
   end
