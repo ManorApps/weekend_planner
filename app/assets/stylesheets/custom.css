@@ -53,11 +53,14 @@
   position:relative;
 }
 .test_absolute{
-
   position: absolute;
   top: 0;
   z-index: 110;
   color: white;
+  left: 50%;
+  top: 200px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .test_absolute input {
