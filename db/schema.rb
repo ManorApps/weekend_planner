@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160430194033) do
     t.text     "description", :limit=>65535
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "token",       :limit=>255
     t.datetime "created_at",  :null=>false
     t.datetime "updated_at",  :null=>false
     t.integer  "created_by",  :limit=>4

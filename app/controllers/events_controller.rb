@@ -12,7 +12,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
     @this_event_id = params[:id]
     @this_user_id = session[:user_id]
     @is_this_user_attending = Attending.select('attendings.id').where('attendings.user_id' => @this_user_id, 'attendings.event_id' => @this_event_id)
@@ -94,7 +93,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.find_by("token = ?", params[:token])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
