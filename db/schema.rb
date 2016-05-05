@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430194033) do
+ActiveRecord::Schema.define(version: 20160505012256) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name",        :limit=>255
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160430194033) do
     t.datetime "created_at",  :null=>false
     t.datetime "updated_at",  :null=>false
     t.integer  "created_by",  :limit=>4
+    t.boolean  "is_public"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,6 +36,13 @@ ActiveRecord::Schema.define(version: 20160430194033) do
   create_table "attendings", force: :cascade do |t|
     t.integer  "event_id",   :limit=>4, :index=>{:name=>"index_attendings_on_event_id", :using=>:btree}, :foreign_key=>{:references=>"events", :name=>"fk_attendings_event_id", :on_update=>:restrict, :on_delete=>:restrict}
     t.integer  "user_id",    :limit=>4, :index=>{:name=>"index_attendings_on_user_id", :using=>:btree}, :foreign_key=>{:references=>"users", :name=>"fk_attendings_user_id", :on_update=>:restrict, :on_delete=>:restrict}
+    t.datetime "created_at", :null=>false
+    t.datetime "updated_at", :null=>false
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.integer  "user_id",    :limit=>4, :index=>{:name=>"index_permissions_on_user_id", :using=>:btree}, :foreign_key=>{:references=>"users", :name=>"fk_permissions_user_id", :on_update=>:restrict, :on_delete=>:restrict}
+    t.integer  "event_id",   :limit=>4, :index=>{:name=>"index_permissions_on_event_id", :using=>:btree}, :foreign_key=>{:references=>"events", :name=>"fk_permissions_event_id", :on_update=>:restrict, :on_delete=>:restrict}
     t.datetime "created_at", :null=>false
     t.datetime "updated_at", :null=>false
   end
