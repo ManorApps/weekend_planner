@@ -16,8 +16,8 @@ class EventsController < ApplicationController
     @this_event_id = params[:id]
     @this_user_id = session[:user_id]
     @is_this_user_attending = Attending.select('attendings.id').where('attendings.user_id' => @this_user_id, 'attendings.event_id' => @this_event_id)
-    @attendees = Attending.joins(:user).select('users.id', 'users.first_name', 'users.last_name', 'users.email').where('attendings.event_id' => @this_event_id)
-
+    # @attendees = Attending.joins(:user).select('users.id', 'users.first_name', 'users.last_name', 'users.email').where('attendings.event_id' => @this_event_id)
+    @attendees = @event.users
 
   end
 
@@ -69,7 +69,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-    
+
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }

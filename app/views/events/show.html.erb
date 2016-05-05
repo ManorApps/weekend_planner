@@ -11,7 +11,6 @@ if @is_this_user_attending.empty?
 <h1>Attending</h1>
 <% @attendees.each do |attendee| %>
   <ul>
-
     <li><%= link_to attendee.first_name.to_s + ' ' + attendee.last_name[0].to_s + '.', user_path(attendee) %></td>
 
   </ul>

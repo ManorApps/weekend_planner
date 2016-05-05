@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
-  resources :users, except: :index
+  resources :users, {except: :index, param: :token}
+
   resources :events
   match ':controller(/:action(/:id))', :via => :get
   # The priority is based upon order of creation: first created -> highest priority.

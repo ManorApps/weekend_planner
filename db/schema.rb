@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160430194033) do
     t.string   "first_name",      :limit=>255
     t.string   "last_name",       :limit=>255
     t.string   "password_digest", :limit=>255
+    t.string   "token",           :limit=>255
     t.datetime "created_at",      :null=>false
     t.datetime "updated_at",      :null=>false
   end
