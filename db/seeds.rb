@@ -12,7 +12,7 @@
 end
 
 100.times do
-  Event.create(name: Faker::Hipster.sentence(3), description: Faker::Hipster.paragraph, created_by: User.order("RAND()").first.id)
+  Event.create(name: Faker::Hipster.sentence(3), description: Faker::Hipster.paragraph, created_by: User.order("RAND()").first.id, is_public: true)
 end
 
 1000.times do

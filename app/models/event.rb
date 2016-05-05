@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
   belongs_to :user, :class_name => "User", :foreign_key => "created_by"
   has_many :attending,  dependent: :destroy
   has_many :users, through: :attending
+  has_many :permission,  dependent: :destroy
+  has_many :invitees, through: :permission, source: :user
   before_create :generate_token, unless: :token?
 
   def to_param
@@ -20,4 +22,5 @@ class Event < ActiveRecord::Base
       end
       self.token
     end
+
 end

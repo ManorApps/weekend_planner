@@ -1,3 +1,5 @@
+<div class="test_relative">
+  <div class="test_absolute">
 <h1>Welcome to Weekend Planner </h1>
 
 <%= form_tag(login_path) do %>
@@ -11,18 +13,15 @@
 <% end %>
 
 <%= button_to 'Sign Up', new_user_path, method: :get  %>
+</div>
 
-<div class="hero-image"></div>
-
-<!-- <div class="homepage-hero-module">
+<div class="homepage-hero-module">
     <div class="video-container">
         <div class="filter"></div>
         <video autoplay loop class="fillWidth">
-            <%= video_tag 'Sunset-Lapse.mp4' %>Your browser does not support the video tag. I suggest you upgrade your browser.
-            <%= video_tag 'Sunset-Lapse.webm' %>Your browser does not support the video tag. I suggest you upgrade your browser.
+          <source src="/assets/Sunset-Lapse.mp4" type="video/mp4"
         </video>
-        <div class="poster hidden">
-            <%= image_tag 'Sunset-Lapse.jpg' %>
-        </div>
+
     </div>
-</div> -->
+</div>
+</div>
